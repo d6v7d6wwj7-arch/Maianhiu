@@ -587,10 +587,10 @@ scene.add(planet);
 
 //Ganti Deskripsi Planet
 const ringTexts = [
-  'Galaxy of love From ...',//untuk deskripsi planet layer 1
+  'Galaxy of love from Dohung',//untuk deskripsi planet layer 1
   "I love you",//untuk deskripsi planet layer 2
-  "♡Happy Girlfriend day♡",//untuk deskripsi planet layer 3
-  "01/08/2025",//untuk deskripsi planet layer 4
+  "Meeting you is the best thing that ever happened to me",//untuk deskripsi planet layer 3
+  "08/05/2025",//untuk deskripsi planet layer 4
   ...(window.dataCCD && window.dataCCD.data.ringTexts ? window.dataCCD.data.ringTexts : [])
 ];
 
@@ -1067,7 +1067,7 @@ function createHintText() {
   canvas.width = canvas.height = canvasSize;
   const context = canvas.getContext('2d');
   const fontSize = 50;
-  const text = 'Happy Girlfriend Day!';
+  const text = 'Anh yeu em';
   context.font = `bold ${fontSize}px Arial, sans-serif`;
   context.textAlign = 'center';
   context.textBaseline = 'middle';
