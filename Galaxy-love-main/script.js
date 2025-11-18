@@ -91,9 +91,9 @@ const numGroups = heartImages.length;
 
 
 
-const maxDensity = 45000;
+const maxDensity = 50000;
 
-const minDensity = 1200;
+const minDensity = 2000;
 
 const maxGroupsForScale = 22;
 
@@ -314,7 +314,7 @@ for (let group = 0; group < numGroups; group++) {
   img.crossOrigin = "Anonymous";
   img.src = heartImages[group];
   img.onload = () => {
-    const neonTexture = createNeonTexture(img, 180);
+    const neonTexture = createNeonTexture(img, 256);
 
     const materialNear = new THREE.PointsMaterial({
       size: 1.8,
