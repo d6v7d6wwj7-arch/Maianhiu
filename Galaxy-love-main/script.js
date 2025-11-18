@@ -267,9 +267,9 @@ for (let group = 0; group < numGroups; group++) {
     const randomZ = (Math.random() - 0.5) * galaxyParameters.randomness * radius;
     const totalAngle = branchAngle + spinAngle;
 
-   groupPositions[idx] = Math.cos(totalAngle) * radius + randomX;
-   groupPositions[idx + 1] = randomY;
-   groupPositions[idx + 2] = Math.sin(totalAngle) * radius + randomZ;
+    groupPositions[idx] = Math.cos(totalAngle) * radius + randomX;
+    groupPositions[idx + 1] = randomY;
+    groupPositions[idx + 2] = Math.sin(totalAngle) * radius + randomZ;
 
 
     const colorNear = new THREE.Color(0xffffff);
