@@ -246,18 +246,6 @@ function createNeonTexture(image, size) {
   ctx.restore();
   return new THREE.CanvasTexture(canvas);
 }
-// Phân bố ảnh cách đều nhau trên một vòng tròn lớn
-const imageSpreadRadius = 120;  
-const imageCenters = [];
-
-for (let g = 0; g < numGroups; g++) {
-  const angle = (g / numGroups) * Math.PI * 2;
-  const x = Math.cos(angle) * imageSpreadRadius;
-  const z = Math.sin(angle) * imageSpreadRadius;
-  const y = (Math.random() - 0.5) * 20; // optional làm cao thấp khác nhau
-  
-  imageCenters.push(new THREE.Vector3(x, y, z));
-}
 
 for (let group = 0; group < numGroups; group++) {
   const groupPositions = new Float32Array(pointsPerGroup * 3);
@@ -279,9 +267,10 @@ for (let group = 0; group < numGroups; group++) {
     const randomZ = (Math.random() - 0.5) * galaxyParameters.randomness * radius;
     const totalAngle = branchAngle + spinAngle;
 
-    groupPositions[idx] = imageCenters[group].x + Math.cos(totalAngle) * radius + randomX;
-    groupPositions[idx + 1] = imageCenters[group].y + randomY;
-    groupPositions[idx + 2] = imageCenters[group].z + Math.sin(totalAngle) * radius + randomZ;
+   groupPositions[idx] = Math.cos(totalAngle) * radius + randomX;
+   groupPositions[idx + 1] = randomY;
+   groupPositions[idx + 2] = Math.sin(totalAngle) * radius + randomZ;
+
 
     const colorNear = new THREE.Color(0xffffff);
     groupColorsNear[idx] = colorNear.r;
